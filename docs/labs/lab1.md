@@ -63,6 +63,8 @@ $ sleep 100
 
 Comanda `sleep`(1) așteaptă 100 de secunde fără să afișeze nimic, iar promptul nu reapare până la încheierea ei. Apăsați `Ctrl+C` pentru a o opri și a reveni la prompt. Același lucru îl puteți face cu orice comandă care durează prea mult sau pare blocată.
 
+![Comanda sleep 100 întreruptă cu Ctrl+C](../assets/gifs/ctrl-c.gif)
+
 **Copiere și lipire.** Deoarece `Ctrl+C` întrerupe comenzi, în majoritatea terminalelor copierea și lipirea se fac cu `Ctrl+Shift+C` și `Ctrl+Shift+V`, sau din meniul deschis cu click dreapta. Atenție când copiați comenzi din acest document: simbolul `$` de la începutul liniei este promptul și nu face parte din comandă, iar liniile fără `$` sunt rezultatul afișat de comandă. Copiați doar comanda propriu-zisă.
 
 ## Navigare
