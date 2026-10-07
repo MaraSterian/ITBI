@@ -45,6 +45,10 @@ Prima instrucțiune s-ar putea să vă surprindă afișând manualul comenzii `p
 $ man man
 ```
 
+În interiorul unei pagini de manual vă deplasați cu săgețile sau cu `Space` (o pagină întreagă), căutați un cuvânt cu `/`, treceți la următoarea potrivire cu `n` și ieșiți cu `q`:
+
+![Navigarea în pagina de manual a comenzii ls](../assets/gifs/man.gif)
+
 ## Lucrul eficient în linia de comandă
 
 Câteva combinații de taste vă scutesc de mult timp și de multe greșeli în terminal:
@@ -54,6 +58,14 @@ Câteva combinații de taste vă scutesc de mult timp și de multe greșeli în 
 | `Tab` | completează numele comenzii sau al fișierului început |
 | `↑` / `↓` | parcurge comenzile introduse anterior |
 | `Ctrl+C` | întrerupe comanda aflată în execuție |
+
+Când există o singură potrivire, `Tab` completează direct numele. Când există mai multe, apăsați `Tab` de două ori pentru a vedea variantele, apoi mai tastați câteva litere:
+
+![Completarea automată a numelor de directoare cu Tab](../assets/gifs/tab.gif)
+
+Cu `↑` puteți readuce o comandă anterioară și o puteți modifica înainte de a o rula din nou:
+
+![Parcurgerea și modificarea comenzilor anterioare cu săgețile](../assets/gifs/history.gif)
 
 Pentru a exersa `Ctrl+C`, rulați:
 
@@ -179,6 +191,10 @@ Pentru editarea fișierelor din linia de comandă sunt disponibile diverse edito
 ```
 $ nano main.cpp
 ```
+
+În `nano`(1) scrieți direct textul, salvați cu `Ctrl+O` (confirmați numele fișierului cu `Enter`) și ieșiți cu `Ctrl+X`. Scurtăturile principale sunt afișate în partea de jos a ecranului, unde `^` înseamnă tasta `Ctrl`.
+
+![Editarea, salvarea și închiderea unui fișier în nano](../assets/gifs/nano.gif)
 
 Un avantaj al acestora este că pot fi utilizate inclusiv pe sisteme care nu pun la dispoziție o interfață grafică. Desigur, multe distribuții vin cu editoare grafice instalate, precum `gedit` sau `kate`, care pot fi apelate într-o manieră similară.
 
