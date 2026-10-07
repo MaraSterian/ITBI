@@ -15,6 +15,11 @@ nav = [
   { "Laboratoare" = [
     { "Mașini virtuale" = "labs/VMs.md" },
     { "Laboratorul 1: Linia de comandă" = "labs/lab1.md" },
+    { "Laboratorul 2: Căutare, liste de comenzi, compilare" = "labs/lab2.md" },
+    { "Laboratorul 3: Utilizatori, fișiere, procese" = "labs/lab3.md" },
+    { "Laboratorul 4: Programarea shell" = "labs/lab4.md" },
+    { "Laboratorul 5: Lucrul în rețea" = "labs/lab5.md" },
+    { "Laboratorul 6: Controlul versiunilor" = "labs/lab6.md" },
   ] },
 ]
 
