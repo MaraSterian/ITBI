@@ -9,6 +9,11 @@ Bine ați venit! Aici găsiți materialele pentru laboratoarele de ITBI.
 | Nr. | Subiect |
 | --- | ------- |
 | 1 | [Linia de comandă, Sistemul de fișiere](labs/lab1.md) |
+| 2 | [Căutare, liste de comenzi, compilare](labs/lab2.md) |
+| 3 | [Utilizatori, fișiere, procese](labs/lab3.md) |
+| 4 | [Programarea shell](labs/lab4.md) |
+| 5 | [Lucrul în rețea](labs/lab5.md) |
+| 6 | [Controlul versiunilor](labs/lab6.md) |
 
 ## Cum lucrăm
 

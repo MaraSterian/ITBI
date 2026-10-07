@@ -53,6 +53,10 @@ $ git commit myfile.c
 
 Această comandă va porni editorul pentru a completa o descriere a schimbărilor aduse de acest commit. Completați, salvați și ieșiți din editor. Commit-ul este efectuat.
 
+În Ubuntu editorul implicit este `nano`. Dacă se deschide `vim`, apăsați `Esc`, tastați `:wq` și `Enter` pentru a salva și ieși; puteți alege `nano` cu `git config --global core.editor nano`. Mesajul poate fi dat și direct, fără editor, cu opțiunea `-m`:
+
+![git commit cu mesajul scris în editor, apoi cu opțiunea -m](../assets/gifs/git-commit.gif)
+
 Pentru a trimite schimbările către alte repository-uri se folosește subcomanda `push`. Întâi trebuie adăugată o intrare pentru fiecare repository cu care vrem să comunicăm folosind subcomanda `remote`:
 
 ```

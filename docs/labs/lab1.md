@@ -165,13 +165,13 @@ $ ./path/to/executable
 Observați că `ls`(1) se află într-unul din directoarele conținute în `$PATH`, motiv pentru care nu este nevoie să specificăm întreaga cale. Pentru a adăuga directoarele la `$PATH` se poate folosi comanda
 
 ```
-$ export PATH=$PATH:/path/to/directory
+$ export PATH=$PATH:<calea absolută către director>
 ```
 
 pentru adăugare la final, sau
 
 ```
-$ export PATH=/path/to/directory:$PATH
+$ export PATH=<calea absolută către director>:$PATH
 ```
 
 pentru adăugare la început.

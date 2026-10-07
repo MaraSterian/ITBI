@@ -50,7 +50,6 @@ ratata
 rata tata
 $ grep -E 'rata(ta)+' rat
 ratata
-rata tata
 $ grep -E 'rata(ta)?' rat
 rata
 ratat
@@ -59,6 +58,10 @@ rata tata
 ```
 
 Observați că am folosit parantezele pentru grupare și opțiunea `-E` pentru a folosi expresii regulate.
+
+În Ubuntu, `grep`(1) colorează partea din fiecare linie care se potrivește cu expresia, așa că puteți vedea exact ce a găsit:
+
+![Potrivirile găsite de grep, evidențiate cu culoare](../assets/gifs/grep-color.gif)
 
 ## Liste de comenzi
 
@@ -143,6 +146,8 @@ Hello, World!
 ```
 
 unde `hello` este numele executabilului, iar `./` spune shell-ului să nu caute executabilul în `$PATH` pentru că se află în directorul curent.
+
+![Compilarea programului hello.c și rularea lui, cu și fără ./](../assets/gifs/compile.gif)
 
 Formatul cel mai general al funcției `main` conține în semnătura funcției numărul argumentelor din linia de comandă (`argc`), un vector de stringuri care conține argumentele propriu-zise din linia de comandă (`argv`), și respectiv mediul de execuție reprezentat ca un vector de stringuri (`envp`). Fiecare element al vectorului care reprezintă mediul de execuție are forma discutată `nume=valoare`. Aceasta este modalitatea prin care shell-ul comunică mediul de execuție comenzilor pe care le lansează și care astfel pot folosi valorile variabilelor de mediu pentru a-și adapta comportamentul la mediul de execuție.
 

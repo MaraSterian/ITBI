@@ -243,6 +243,10 @@ $ ssh alex@fmi.unibuc.ro -p 2222
 
 Rezultatul acestei comenzi este deschiderea unui shell pe o mașină aflată la distanță, identificată ca mai sus prin adresa de IP și/sau port. Numele de utilizator este fie implicit numele local al utilizatorului care lansează comanda `ssh`, fie cel precizat explicit în comandă înainte de caracterul `@`. Execuția shell-ului la distanță eșuează dacă utilizatorul nu reușește să se logheze în sistemul de la distanță cu parola de utilizator de pe sistemul respectiv.
 
+La prima conectare, `ssh` nu cunoaște încă serverul și cere confirmarea amprentei acestuia: tastați `yes`. Urmăriți promptul: după conectare el arată numele mașinii de la distanță, iar după `exit` reveniți pe mașina proprie.
+
+![Prima conectare prin ssh și revenirea cu exit](../assets/gifs/ssh.gif)
+
 O variantă mai comodă și mai sigură de autentificare, care nu presupune introducerea parolei de pe sistemul de la distanță, folosește criptografia cu chei asimetrice. Această metodă de autentificare presupune folosirea a două chei: una *publică* și una *secretă*/*privată*. Cheia publică este cunoscută tuturor (poate fi distribuită public) și poate fi preluată de sistemele de calcul care vor să permită accesul pe baza ei. Cheia secretă este cunoscută doar de proprietarul contului și trebuie păstrată în siguranță. Compromiterea ei impune automat generarea unei noi perechi de chei și înlocuirea celor vechi. Perechea de chei este folosită pentru autentificare și acces fără parolă.
 
 Cheile sunt stocate de regulă în directorul `~/.ssh/` din contul utilizatorului. Cheia publică, care folosește uzual extensia `.pub` este distribuită după generare pe sistemele de calcul în care se dorește accesul utilizatorului. Ea este adăugată pe sistemele respective într-un fișier numit `~/.ssh/authorized_keys` care conține toate cheile publice ale utilizatorului care are dreptul să utilizeze contul respectiv de pe mașina aflată la distanță.
@@ -296,6 +300,10 @@ Cheile publice pentru cei care doriți să aibă acces pe contul dumneavoastră 
 $ cat id_rsa.pub >> .ssh/authorized_keys
 ```
 
+Întregul proces, de la generarea cheii până la conectarea fără parolă:
+
+![Generarea unei chei ed25519, copierea ei pe server și conectarea fără parolă](../assets/gifs/ssh-keygen.gif)
+
 Pentru a transfera date prin SSH se folosește comanda `scp`(1) care se comportă aproape identic cu `cp`(1). Diferența apare în specificarea sursei și destinației. Acestea sunt prefixate cu date legate de host.
 
 ```
@@ -319,6 +327,10 @@ $ screen -ls
 ```
 
 care va lista un identificator al comenzii detașate de vechiul terminal. Cu ajutorul comenzii `screen -r <identificator>` puteți reatașa comanda `ssh` detașată anterior la terminalul curent. Tastați `Ctrl+C` pentru a termina execuția comenzii `sleep`.
+
+În clipul de mai jos, în locul lui `sleep 300` rulează `ping`, care afișează câte o linie pe secundă. La reatașare se vede că a continuat să ruleze cât timp sesiunea a fost detașată.
+
+![Detașarea unei comenzi cu screen, listarea și reatașarea ei](../assets/gifs/screen.gif)
 
 O implementare similară FTP folosind protocolul SSH este SFTP. Pentru a accesa un server se folosește comanda `sftp`(1) în același mod în care folosim comanda `ssh`(1). O dată autentificați, comenzile și modul de lucru sunt aproape identice cu cele din FTP. Excepție face faptul că modul anonim nu mai este disponibil.
 

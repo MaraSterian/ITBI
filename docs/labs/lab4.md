@@ -23,6 +23,10 @@ exit 0
 
 Prima linie este un comentariu (începe cu caracterul `#`) special (imediat după `#` urmează `!`) și care specifică interpretorul de comenzi (`/bin/bash`) care este folosit pentru a interpreta și executa comenzile care urmează. Ultima linie care apelează comanda `exit` cu parametrul `0` evidențiază o bună practică în programarea Unix în general (și shell scripting-ul nu face excepție) prin care se comunică procesului părinte (shell-ul care a lansat în execuție scriptul de mai sus în cazul nostru) codul de terminare al programului (al scriptului în cazul de mai sus). Convenția Unix spune că orice program care se termină fără eroare întoarce un cod `0`. Orice altă valoare de retur reprezintă a priori o terminare eronată a programului.
 
+Întregul proces, inclusiv eroarea *Permission denied* care apare dacă uitați `chmod`:
+
+![Scrierea unui script în nano, eroarea Permission denied și rularea după chmod](../assets/gifs/script.gif)
+
 În cazul cel mai general, prima linie din script poate desemna orice tip de interpretor care, desigur, va fi folosit pentru a interpreta comenzile care urmează în script. Iată un script `awk`, care poate fi lansat și el în execuție de către orice alt interpretor de comenzi, inclusiv `bash`, și care tipărește argumentele primite de script în linia de comandă:
 
 ```awk
@@ -58,6 +62,10 @@ Fiind un program ca oricare altul, `[` are nevoie de spații în jurul său. De 
 Comanda `test` este extrem de complexă și poate testa stringuri, numere, fișiere. Pentru o imagine comprehensivă, consultați pagina de manual. În cele ce urmează vom evidenția câteva dintre utilizările des întâlnite ale comenzii, apelând la comenzile condiționale puse la dispoziție de către shell. În secțiunile următoare vom vedea cum poate fi folosită comanda `test` împreună cu instrucțiuni condiționale și iterative.
 
 Pentru exemplele care urmează vom folosi o variabilă shell `X` căreia i se vor asigna valori diverse și o vom folosi împreună cu comanda `test`. Pentru lizibilitate vom folosi caracterul `\` care permite extensia unei singure linii de comandă pe linia următoare (atât interactiv, la promptul shell-ului, cât și în scripturi). În mod interactiv, utilizarea `\` implică automat apariția promptului de continuare `>` stocat în variabila de mediu `PS2`.
+
+Același prompt `>` apare și când uitați să închideți ghilimelele: shell-ul așteaptă restul comenzii și pare să ignore tot ce tastați. Apăsați `Ctrl+C` pentru a renunța la comanda neterminată.
+
+![Promptul de continuare: ghilimele neînchise, ieșirea cu Ctrl+C și folosirea lui \](../assets/gifs/continuation.gif)
 
 ```
 $ X=4
@@ -280,6 +288,10 @@ Iteratia cu numarul 4
 Iteratia cu numarul 5
 $
 ```
+
+Comanda `cat > myfor-loop.sh` scrie în fișier tot ce tastați, până când apăsați `Ctrl+D` pe o linie nouă. Abia atunci revine promptul.
+
+![Scrierea unui fișier cu cat și încheierea cu Ctrl+D](../assets/gifs/cat-eof.gif)
 
 Observați că `do` și `done`, cuvinte cheie ale instrucțiunii `for`, trebuie să apară pe o linie separată chiar la începutul ei. Dacă modificați scriptul și mutați cuvântul cheie `do` pe aceeași linie cu `for`, la execuția scriptului veți obține o eroare de sintaxă. Puteți repara această eroare folosind caracterul special `;` care unește două linii:
 

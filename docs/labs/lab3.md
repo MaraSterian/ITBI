@@ -70,6 +70,10 @@ Aceste simboluri pot fi folosite în orice combinație pentru a specifica adăug
 
 Pentru `su`(8) este nevoie să cunoaștem parola utilizatorului în contul căruia vrem să intrăm. Pentru `sudo`(8) e nevoie doar de propria parolă, care ne va da acces la comenzile specificate în fișierul `/etc/sudoers`. Acest fișier respectă un format fix ce permite comenzi și configurații complexe.
 
+Când tastați o parolă în terminal (la `sudo`, `passwd`, `su` sau `ssh`), pe ecran nu apare nimic, nici măcar steluțe. Este normal: tastați parola și apăsați `Enter`.
+
+![Parola tastată la sudo și passwd nu apare pe ecran](../assets/gifs/password.gif)
+
 Menționăm aici cazul cel mai frecvent în care vrem să adăugăm permisiuni pentru un utilizator sau grup. Forma cea mai simplă este
 
 ```
@@ -90,6 +94,10 @@ root ALL=(ALL) SETENV: ALL
 A doua linie permite tuturor din grupul `users` să monteze și demonteze în directorul `/cdrom`. Atenție: asta înseamnă că este permisă doar comanda cu argumentele exact cum sunt trecute. Comanda `/sbin/mount /stick` nu ar fi permisă.
 
 Ultima linie permite celor din grupul `users` să închidă calculatorul, dar doar dacă sunt autentificați de pe mașina curentă (`localhost`). Se poate și de la distanță (ex. prin `ssh`), acest subiect fiind tratat în laboratoarele viitoare.
+
+Fișierul `/etc/sudoers` se editează întotdeauna cu `sudo visudo`, nu direct. `visudo`(8) verifică sintaxa înainte de a salva, iar la o greșeală întreabă *What now?*: apăsați `e` și `Enter` pentru a corecta fișierul. Un `/etc/sudoers` greșit vă poate lăsa fără acces la `sudo`.
+
+![Editarea /etc/sudoers cu visudo, inclusiv corectarea unei greșeli](../assets/gifs/visudo.gif)
 
 ## Comenzi de monitorizare a utilizatorilor
 
@@ -130,7 +138,9 @@ wtmp begins Tue Oct  1 10:02:00 2024
 
 ## Procese
 
-Procesele în cadrul sistemului de operare au un ID unic numit *process ID* (`pid`). Pentru a afișa procesele existente la un moment dat se folosește comanda `ps`(1). Asemănătoare cu *task manager*-ul din Windows este comanda `top`(1), care afișează în timp real schimbările aferente proceselor din sistem.
+Procesele în cadrul sistemului de operare au un ID unic numit *process ID* (`pid`). Pentru a afișa procesele existente la un moment dat se folosește comanda `ps`(1). Asemănătoare cu *task manager*-ul din Windows este comanda `top`(1), care afișează în timp real schimbările aferente proceselor din sistem. În `top`(1) lista se actualizează singură; `M` sortează după memorie, `P` după procesor, iar `q` închide programul.
+
+![Programul top: actualizare în timp real, sortare și ieșire](../assets/gifs/top.gif)
 
 Implicit, comanda `ps`(1) afișează procesele utilizatorului curent:
 
@@ -263,6 +273,8 @@ $ fg %1
 sleep 60
 ^C
 ```
+
+![Job control: comenzi în background, jobs, Ctrl+Z, fg și bg](../assets/gifs/jobs.gif)
 
 ## Legătura dintre procese și fișiere
 
