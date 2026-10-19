@@ -14,6 +14,7 @@ nav = [
   { "Acasă" = "index.md" },
   { "Laboratoare" = [
     { "Mașini virtuale" = "labs/VMs.md" },
+    { "Înregistrarea comenzilor" = "cmd-record.md" },
     { "Laboratorul 1: Linia de comandă" = "labs/lab1.md" },
     { "Laboratorul 2: Căutare, liste de comenzi, compilare" = "labs/lab2.md" },
     { "Laboratorul 3: Utilizatori, fișiere, procese" = "labs/lab3.md" },

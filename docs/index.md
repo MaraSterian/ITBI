@@ -18,5 +18,8 @@ Bine ați venit! Aici găsiți materialele pentru laboratoarele de ITBI.
 ## Cum lucrăm
 
 - Fiecare laborator conține o parte teoretică și o secțiune de **Sarcini de laborator** la final.
+- Pentru **Sarcinile de laborator**, aveți 2 variante:
+    - Înregistrarea comenzilor cu `script` - vedeți [Înregistrarea comenzilor](cmd-record.md).
+    - Capturi de ecran cu terminalul (comanda și rezultatul ei), într-un fișier `.docx` sau `.pdf`.
 - Majoritatea comenzilor se rulează într-un terminal. În Ubuntu, deschideți unul cu ++ctrl+alt+t++.
 - Când întâlniți o comandă necunoscută, citiți manualul: `man <comandă>`.
